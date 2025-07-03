@@ -21,7 +21,8 @@ const ChallengeForm = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
     setForm({ ...form, [name]: type === "checkbox" ? checked : value });
   };
 
@@ -40,6 +41,7 @@ const ChallengeForm = () => {
 
   return (
     <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+      {/* LEFT SIDE */}
       <div>
         <h2 className="text-xl font-bold mb-4">Setup Your Challenge</h2>
 
@@ -142,7 +144,7 @@ const ChallengeForm = () => {
         </div>
       </div>
 
-      {/* RIGHT - Billing Details */}
+      {/* RIGHT SIDE - Billing Details */}
       <div>
         <h2 className="text-xl font-bold mb-4">Billing Details</h2>
 
