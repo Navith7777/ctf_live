@@ -63,7 +63,7 @@ const Hero = () => {
 
   const handleBuyClick = () => {
     if (!user) {
-      toast.error("Please login to continue");
+      toast.error("Please login to contie");
       router.push("/signin");
       return;
     }
